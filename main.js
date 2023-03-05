@@ -23,7 +23,13 @@ const TERMS = [
   "leaping",
   "emperor",
   "dark_staff",
-  "light_staff"
+  "light_staff",
+  "darksteel_maul_+1",
+  "walkure",
+  "valkyrie",
+  "hades_earr",
+  "assault_ear",
+  "bloodbead_ear"
 ]
 
 function fetchData(url) {
