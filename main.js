@@ -19,7 +19,7 @@ const TERMS = [
   "torea",
   "serket",
   "knightly_ma",
-  "peackcok",
+  "peacock",
   "leaping",
   "emperor",
   "dark_staff",
