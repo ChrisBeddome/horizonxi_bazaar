@@ -43,10 +43,13 @@ function renderHits(hits) {
 function renderListing(listing) {
   const name = document.createElement("span");
   const price = document.createElement("span")
+  const seller = document.createElement("span")
   name.innerText = `${listing.name}: ----- `
-  price.innerText = listing.bazaar.toLocaleString()
+  price.innerText = `${listing.bazaar.toLocaleString()} ----- `
+  seller.innerText = listing.charname
   document.body.appendChild(name)
   document.body.appendChild(price)
+  document.body.appendChild(seller)
 
   document.body.appendChild(document.createElement("br"))
 }
@@ -55,7 +58,6 @@ async function init(terms) {
   const listings = await fetchData("https://api.horizonxi.com/api/v1/items/bazaar")
   const hits = listings.filter(listing => terms.some(term => listing.name.includes(term)))
   renderHits(hits)
-  console.log(hits)
 } 
 
 init(TERMS);
