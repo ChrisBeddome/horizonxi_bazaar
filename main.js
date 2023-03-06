@@ -88,11 +88,15 @@ function formatListings(listings) {
   return listingsHash
 }
 
-async function init(terms) {
+async function update(terms) {
+  console.log("updating")
   const listings = await fetchData("https://api.horizonxi.com/api/v1/items/bazaar")
+  const resultsUl = document.getElementById("results")
+  resultsUl.innerHTML = "";
   const hits = filterResults(listings, terms)
   formattedHits = formatListings(hits)
   renderHits(formattedHits)
 } 
 
-init(TERMS);
+update(TERMS);
+setInterval(update.bind(null, TERMS), 30000)
