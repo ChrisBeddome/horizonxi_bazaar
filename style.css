@@ -2,6 +2,7 @@ body {
   margin: 0;
   font-family: sans-serif;
   background-color: #f5f6f7;
+  font-family: 'Open Sans', sans-serif;
 }
 
 ul {
@@ -33,12 +34,13 @@ li > * {
 
 li > div {
   text-align: right;
-  font-size: 12px;
+  font-size: 13px;
+  font-weight: 400;
 }
 
 li > div:first-child {
   text-align: left;
-  font-weight: bold;
+  font-weight: 600;
   font-size: 14px;
 }
 
