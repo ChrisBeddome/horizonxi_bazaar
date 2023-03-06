@@ -34,7 +34,9 @@ const TERMS = [
   "horomush",
   "fuma_ky",
   "venomous",
-  "spiked_finger"
+  "spiked_finger",
+  "warwolf",
+  "tatami"
 ]
 
 function fetchData(url) {
