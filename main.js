@@ -29,7 +29,11 @@ const TERMS = [
   "valkyrie",
   "hades_earr",
   "assault_ear",
-  "bloodbead_ear"
+  "bloodbead_ear",
+  "ochiud",
+  "horomush",
+  "fuma_ky",
+  "venomous"
 ]
 
 function fetchData(url) {
@@ -41,29 +45,54 @@ function fetchData(url) {
 }
 
 function renderHits(hits) {
-  hits.forEach(listing => {
-    renderListing(listing)
-  }) 
+  const resultsUl = document.getElementById("results");
+  for (key in hits) {
+    hits[key].forEach((listing, i) => {
+      renderListing(resultsUl, key, listing, i == 0)
+    }) 
+    if (Object.keys(hits).indexOf(key) < Object.keys(hits).length - 1) {
+      resultsUl.innerHTML += "<hr/>"
+    }
+  }
 }
 
-function renderListing(listing) {
-  const name = document.createElement("span");
-  const price = document.createElement("span")
-  const seller = document.createElement("span")
-  name.innerText = `${listing.name}: ----- `
-  price.innerText = `${listing.bazaar.toLocaleString()} ----- `
-  seller.innerText = listing.charname
-  document.body.appendChild(name)
-  document.body.appendChild(price)
-  document.body.appendChild(seller)
+function renderListing(container, key, listing, renderName) {
+  const listingHTML = listingRowTemplate(listing, key, renderName);
+  container.innerHTML += listingHTML;
+}
 
-  document.body.appendChild(document.createElement("br"))
+function listingRowTemplate(listing, key, renderName) {
+  return `
+    <li>
+      <div>${renderName ? formatName(key) : ""}</div>
+      <div>${listing.price.toLocaleString()}</div>
+      <div>${listing.seller}</div>
+    </li>
+  `;
+}
+
+function formatName(name) {
+  return name.split("_").map(word => word.charAt(0).toUpperCase() + word.slice(1)).join(" ")
+}
+
+function filterResults(listings, terms) {
+  return listings.filter(listing => terms.some(term => listing.name.includes(term)))
+}
+
+function formatListings(listings) {
+  const uniqueNames = new Set(listings.map(listing => listing.name))
+  const listingsHash = {}
+  Array.from(uniqueNames).sort().forEach(name => {
+    listingsHash[name] = listings.filter(listing => listing.name == name).map(listing => ({price: listing.bazaar, seller: listing.charname }))
+  })
+  return listingsHash
 }
 
 async function init(terms) {
   const listings = await fetchData("https://api.horizonxi.com/api/v1/items/bazaar")
-  const hits = listings.filter(listing => terms.some(term => listing.name.includes(term)))
-  renderHits(hits)
+  const hits = filterResults(listings, terms)
+  formattedHits = formatListings(hits)
+  renderHits(formattedHits)
 } 
 
 init(TERMS);
