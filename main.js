@@ -33,7 +33,8 @@ const TERMS = [
   "ochiud",
   "horomush",
   "fuma_ky",
-  "venomous"
+  "venomous",
+  "spiked_finger"
 ]
 
 function fetchData(url) {
@@ -98,5 +99,7 @@ async function update(terms) {
   renderHits(formattedHits)
 } 
 
+const fiveMins = 5 * 60 * 1000
+
 update(TERMS);
-setInterval(update.bind(null, TERMS), 30000)
+setInterval(update.bind(null, TERMS), fiveMins)
