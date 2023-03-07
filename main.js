@@ -15,7 +15,7 @@ const TERMS = [
   "viking",
   "woodsman",
   "buckler_ear",
-  "gigant",
+  "gigant_mant",
   "torea",
   "serket",
   "knightly_ma",
