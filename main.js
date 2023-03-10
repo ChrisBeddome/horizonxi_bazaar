@@ -41,7 +41,8 @@
     "tiphia",
     "hakut",
     "rosenbog",
-    "fomor_cod"
+    "fomor_cod",
+    "triumph_ear"
   ]
 
   const state = {
