@@ -42,7 +42,8 @@
     "hakut",
     "rosenbog",
     "fomor_cod",
-    "triumph_ear"
+    "triumph_ear",
+    "minstrels_ring"
   ]
 
   const state = {
