@@ -58,9 +58,6 @@
     })
   }
 
-  function renderHits(hits) {
-  }
-
   function renderListing(container, key, listing, renderName) {
     const listingHTML = listingRowTemplate(listing, key, renderName);
     container.innerHTML += listingHTML;
