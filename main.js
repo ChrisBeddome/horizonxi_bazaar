@@ -43,7 +43,8 @@
     "rosenbog",
     "fomor_cod",
     "triumph_ear",
-    "minstrels_ring"
+    "minstrels_ring",
+    "espadon_+1"
   ]
 
   const state = {
