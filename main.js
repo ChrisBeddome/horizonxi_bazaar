@@ -10,7 +10,7 @@
     "enlight",
     "amemet_man",
     "cassie",
-    "hercule",
+    "hercules_ring",
     "mermaid",
     "astral_ear",
     "viking_shie",
@@ -44,7 +44,9 @@
     "fomor_cod",
     "triumph_ear",
     "minstrels_ring",
-    "espadon_+1"
+    "espadon_+1",
+    "company_sword",
+    "nomads_mantle_+1"
   ]
 
   const state = {
