@@ -48,7 +48,8 @@
     "company_sword",
     "nomads_mantle_+1",
     "vigor_ring",
-    "victory_ring"
+    "victory_ring",
+    "bomb_queen"
   ]
 
   const state = {
