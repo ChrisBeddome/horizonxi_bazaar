@@ -46,7 +46,9 @@
     // "minstrels_ring",
     // "espadon_+1",
     "company_sword",
-    "nomads_mantle_+1"
+    "nomads_mantle_+1",
+    "vigor_ring",
+    "victory_ring"
   ]
 
   const state = {
