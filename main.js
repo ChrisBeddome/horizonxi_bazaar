@@ -49,7 +49,8 @@
     "nomads_mantle_+1",
     "vigor_ring",
     "victory_ring",
-    "bomb_queen"
+    "bomb_queen",
+    "gem_"
   ]
 
   const state = {
