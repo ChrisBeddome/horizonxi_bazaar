@@ -56,7 +56,8 @@
     "autumnstone",
     "winterstone",
     "springstone",
-    "seal_of"
+    "seal_of",
+    "wooden_ha"
   ]
 
   const state = {
