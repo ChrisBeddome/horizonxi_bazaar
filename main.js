@@ -55,12 +55,14 @@
     "summerstone",
     "autumnstone",
     "winterstone",
-    "springstone"
+    "springstone",
+    "seal_of"
   ]
 
   const state = {
     listings: [],
-    cheapestOnly: true
+    cheapestOnly: true,
+    omitMax: true
   }
 
   function fetchData(url) {
@@ -105,6 +107,14 @@
                               .filter(listing => listing.name == name)
                               .map(listing => ({price: listing.bazaar, seller: listing.charname }))
     })
+    if (state.omitMax) {
+      for (key in listingsHash)  {
+        listingsHash[key] = listingsHash[key].filter((listing) => listing.price < 99999999)
+        if (!listingsHash[key].length) {
+          delete listingsHash[key]
+        }
+      }
+    }
     if (state.cheapestOnly) {
       for (key in listingsHash)  {
         listingsHash[key] = listingsHash[key].sort((a, b) => a.price - b.price).slice(0,1)
@@ -134,9 +144,15 @@
   async function init() {
     await update()
     const cheapestOnlyToggle = document.getElementById("cheapestOnlyToggle")
+    const omitMaxToggle = document.getElementById("omitMaxToggle")
     cheapestOnlyToggle.checked = state.cheapestOnly
+    omitMaxToggle.checked = state.cheapestOnly
     cheapestOnlyToggle.addEventListener("change", e => {
       state.cheapestOnly = e.target.checked
+      render()
+    })
+    omitMaxToggle.addEventListener("change", e => {
+      state.omitMax = e.target.checked
       render()
     })
     render()

@@ -53,14 +53,20 @@ hr {
   margin: 12px 0;
 }
 
-label {
-  text-align: right;
-  font-size:  13px;
+.controls {
+  display: flex;  
+  justify-content: flex-end;
   margin-bottom: 40px;
-  display: block;
 }
 
-label span {
+.controls label {
+  text-align: right;
+  font-size:  13px;
+  display: block;
+  margin-left: 40px;
+}
+
+.controls label span {
   position: relative;
   bottom: 2px;
   margin-left: 3px;
