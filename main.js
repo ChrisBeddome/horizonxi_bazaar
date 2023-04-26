@@ -51,7 +51,11 @@
     "victory_ring",
     "bomb_queen",
     "gem_",
-    "tutelary"
+    "tutelary",
+    "summerstone",
+    "autumnstone",
+    "winterstone",
+    "springstone"
   ]
 
   const state = {
