@@ -58,7 +58,9 @@
     "springstone",
     "seal_of",
     "wooden_ha",
-    "admiral"
+    "admiral",
+    "cursed_sch",
+    "cursed_han"
   ]
 
   const state = {
